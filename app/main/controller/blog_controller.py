@@ -2,7 +2,7 @@ from flask import request
 from flask_restx import Resource
 
 from ..util.dto import BlogDto
-from ..service.blog_service import create_new_blog, get_a_blog, get_all_blogs
+from ..service.blog_service import create_new_blog, get_a_blog, get_all_blogs, delete_blog
 
 api = BlogDto.api
 _blog = BlogDto.blog
@@ -37,3 +37,10 @@ class Blog(Resource):
             api.abort(404)
         else:
             return blog
+
+    @api.doc('delete a blog')
+    # @api.marshal_with(_blog)
+    def delete(self, id):
+        """get a blog given its identifier"""
+        blog = delete_blog(id)
+        return blog
