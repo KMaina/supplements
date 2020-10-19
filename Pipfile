@@ -15,6 +15,7 @@ psycopg2-binary = "*"
 flask-restx = "*"
 flask-testing = "*"
 flask-cors = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
