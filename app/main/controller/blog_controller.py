@@ -27,6 +27,7 @@ class BlogList(Resource):
 @api.route('/<id>')
 @api.param('id', 'The Blog identifier')
 @api.response(404, 'Blog not found.')
+
 class Blog(Resource):
     @api.doc('get a blog')
     @api.marshal_with(_blog)
